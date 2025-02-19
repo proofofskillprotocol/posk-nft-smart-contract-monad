@@ -350,12 +350,7 @@
 					},
 					{
 						"internalType": "string",
-						"name": "imageUrl",
-						"type": "string"
-					},
-					{
-						"internalType": "string",
-						"name": "nftName",
+						"name": "tokenURI",
 						"type": "string"
 					}
 				],
@@ -703,11 +698,10 @@
 				"isApprovedForAll(address,address)": {
 					"details": "See {IERC721-isApprovedForAll}."
 				},
-				"mintNFT(address,string,string)": {
+				"mintNFT(address,string)": {
 					"params": {
-						"imageUrl": "The URL of the image to be used in the NFT metadata.",
-						"nftName": "The name to be used in the NFT metadata.",
-						"recipient": "The EVM wallet address that will receive the NFT."
+						"recipient": "The EVM wallet address that will receive the NFT.",
+						"tokenURI": "The HTTPS URL of the metadata JSON file (e.g., \"https://example.com/metadata/1.json\")."
 					},
 					"returns": {
 						"_0": "tokenId The ID of the minted NFT."
@@ -755,8 +749,8 @@
 		"userdoc": {
 			"kind": "user",
 			"methods": {
-				"mintNFT(address,string,string)": {
-					"notice": "Mints a new NFT with dynamic metadata using the provided name and image URL, then transfers it to `recipient`."
+				"mintNFT(address,string)": {
+					"notice": "Mints a new NFT and sets the token URI to an HTTPS link pointing to hosted metadata."
 				}
 			},
 			"version": 1
@@ -764,7 +758,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/SkillsNft.sol": "SkillsNFT"
+			"contracts/SkillsNftNoName.sol": "SkillsNFT"
 		},
 		"evmVersion": "cancun",
 		"libraries": {},
@@ -866,14 +860,6 @@
 				"dweb:/ipfs/QmWrgT8YJrQ9FfD1o3YYArwo57e7MGdpFKuM74qJ4qE34E"
 			]
 		},
-		"@openzeppelin/contracts/utils/Base64.sol": {
-			"keccak256": "0xbee2b819e1b4bf569ffc1b1b9d560b4abd6a589575f3093edaab9244de18a0c2",
-			"license": "MIT",
-			"urls": [
-				"bzz-raw://e478c0e9bbf3eb8cd3b7784f9b397603e34747f9ffd16571ed1d89ce102de389",
-				"dweb:/ipfs/QmZ6zXpwy5xRxx9RkodJmDZSUTeEqPQUanAC5TUoYqW2VR"
-			]
-		},
 		"@openzeppelin/contracts/utils/Context.sol": {
 			"keccak256": "0x493033a8d1b176a037b2cc6a04dad01a5c157722049bbecf632ca876224dd4b2",
 			"license": "MIT",
@@ -938,12 +924,12 @@
 				"dweb:/ipfs/QmVUSvooZKEdEdap619tcJjTLcAuH6QBdZqAzWwnAXZAWJ"
 			]
 		},
-		"contracts/SkillsNft.sol": {
-			"keccak256": "0x37e9e3e2e513f8a92b877a41a55ffbcecb48d1a581100e9141e0dcc1c350a091",
+		"contracts/SkillsNftNoName.sol": {
+			"keccak256": "0x7d675239ee17bc44256fa2ca7f77353542824113855c20dc0ae1896663f54390",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://b683fd470a0e0824043797b53942b420548bacbf9a520ce0ae2645348c913a8e",
-				"dweb:/ipfs/QmSZPvf1vhDvTceuV5KV4HjqN1EPwva5qpnDygPynkmNHg"
+				"bzz-raw://b6ee1c2dbe40f1f863a752290eaea1dc61d040b480c34157632e8e80a422e6e4",
+				"dweb:/ipfs/QmfKHTtBwcgzr1UYf32mmUeNgofpQw73MdjJKEMmneWDP6"
 			]
 		}
 	},
