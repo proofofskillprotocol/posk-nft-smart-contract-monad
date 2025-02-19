@@ -14,22 +14,27 @@ contract SkillsNFT is ERC721URIStorage, Ownable {
     }
 
     /**
-     * @notice Mints a new NFT with preset metadata using the provided image URL, then transfers it to `recipient`.
+     * @notice Mints a new NFT with dynamic metadata using the provided name and image URL, then transfers it to `recipient`.
      * @param recipient The EVM wallet address that will receive the NFT.
      * @param imageUrl The URL of the image to be used in the NFT metadata.
+     * @param nftName The name to be used in the NFT metadata.
      * @return tokenId The ID of the minted NFT.
      */
-    function mintNFT(address recipient, string memory imageUrl) public onlyOwner returns (uint256) {
+    function mintNFT(
+        address recipient,
+        string memory imageUrl,
+        string memory nftName
+    ) public onlyOwner returns (uint256) {
         uint256 tokenId = tokenCounter;
         _safeMint(recipient, tokenId);
 
-        // Construct the JSON metadata with a fixed name and dynamic image URL.
+        // Construct the JSON metadata with dynamic name and image URL.
         string memory json = Base64.encode(
             bytes(
                 string(
                     abi.encodePacked(
-                        '{"name": "skills.cv/dontletpareendesignanything", ',
-                        '"description": "NFT with dynamic image content.", ',
+                        '{"name": "', nftName, '", ',
+                        '"description": "Proof Of your Proof-of-Skill", ',
                         '"image": "', imageUrl, '"}'
                     )
                 )

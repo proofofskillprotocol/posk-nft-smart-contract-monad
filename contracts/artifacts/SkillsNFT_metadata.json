@@ -352,6 +352,11 @@
 						"internalType": "string",
 						"name": "imageUrl",
 						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "nftName",
+						"type": "string"
 					}
 				],
 				"name": "mintNFT",
@@ -698,9 +703,10 @@
 				"isApprovedForAll(address,address)": {
 					"details": "See {IERC721-isApprovedForAll}."
 				},
-				"mintNFT(address,string)": {
+				"mintNFT(address,string,string)": {
 					"params": {
 						"imageUrl": "The URL of the image to be used in the NFT metadata.",
+						"nftName": "The name to be used in the NFT metadata.",
 						"recipient": "The EVM wallet address that will receive the NFT."
 					},
 					"returns": {
@@ -749,8 +755,8 @@
 		"userdoc": {
 			"kind": "user",
 			"methods": {
-				"mintNFT(address,string)": {
-					"notice": "Mints a new NFT with preset metadata using the provided image URL, then transfers it to `recipient`."
+				"mintNFT(address,string,string)": {
+					"notice": "Mints a new NFT with dynamic metadata using the provided name and image URL, then transfers it to `recipient`."
 				}
 			},
 			"version": 1
@@ -933,11 +939,11 @@
 			]
 		},
 		"contracts/SkillsNft.sol": {
-			"keccak256": "0xd25fd97a965f749d871e14758f6fd0b64e0619b6b0cd3c397837e45767c0d8ad",
+			"keccak256": "0x37e9e3e2e513f8a92b877a41a55ffbcecb48d1a581100e9141e0dcc1c350a091",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://961c0eb745307cf2f1f1088feb1af70e7597ab7e20568a047303914e50321db9",
-				"dweb:/ipfs/Qme6nJdibCWDfGySWmJfd3Garh3qYhhmizxR7Rb6jWghsr"
+				"bzz-raw://b683fd470a0e0824043797b53942b420548bacbf9a520ce0ae2645348c913a8e",
+				"dweb:/ipfs/QmSZPvf1vhDvTceuV5KV4HjqN1EPwva5qpnDygPynkmNHg"
 			]
 		}
 	},
