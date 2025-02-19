@@ -12,19 +12,26 @@ contract ExternalMetadataNFT is ERC721URIStorage, Ownable {
     }
 
     /**
-     * @notice Mints a new NFT with the externally hosted metadata URL.
+     * @notice Mints a new NFT with tokenURI constructed using the provided username.
      * @param recipient The address that will receive the NFT.
-     * @param tokenURI The HTTPS URL pointing to your metadata JSON file.
+     * @param username The username to be appended to the metadata API endpoint.
+     * Note: The username should be URL-encoded if necessary.
      * @return tokenId The ID of the minted NFT.
      */
-    function mintNFT(address recipient, string memory tokenURI)
+    function mintNFT(address recipient, string memory username)
         public
         onlyOwner
         returns (uint256)
     {
         uint256 tokenId = tokenCounter;
         _safeMint(recipient, tokenId);
+
+        // Construct tokenURI by concatenating the base URL with the username.
+        string memory baseURI = "https://api-dev.proofofskill.org/v1.0.0/api/public/nft/metadata?name=";
+        string memory tokenURI = string(abi.encodePacked(baseURI, username));
+
         _setTokenURI(tokenId, tokenURI);
+
         tokenCounter++;
         return tokenId;
     }

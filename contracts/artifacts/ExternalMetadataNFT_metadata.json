@@ -350,7 +350,7 @@
 					},
 					{
 						"internalType": "string",
-						"name": "tokenURI",
+						"name": "username",
 						"type": "string"
 					}
 				],
@@ -701,7 +701,7 @@
 				"mintNFT(address,string)": {
 					"params": {
 						"recipient": "The address that will receive the NFT.",
-						"tokenURI": "The HTTPS URL pointing to your metadata JSON file."
+						"username": "The username to be appended to the metadata API endpoint. Note: The username should be URL-encoded if necessary."
 					},
 					"returns": {
 						"_0": "tokenId The ID of the minted NFT."
@@ -750,7 +750,7 @@
 			"kind": "user",
 			"methods": {
 				"mintNFT(address,string)": {
-					"notice": "Mints a new NFT with the externally hosted metadata URL."
+					"notice": "Mints a new NFT with tokenURI constructed using the provided username."
 				}
 			},
 			"version": 1
@@ -925,11 +925,11 @@
 			]
 		},
 		"contracts/SkillsNftNoName.sol": {
-			"keccak256": "0x3042d37fac5b3baf195056ac6b45fa5db0b44832b41cc794ab0db62b060ce4ee",
+			"keccak256": "0x059759b1eb30f2164c93bccd6044003a4f470e9cdf1ba71ba350093893dcc228",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://68e03d66dd3c447fadd94b7abe6978d1a038f38e670aa0ecb4d70b74cde04ed2",
-				"dweb:/ipfs/QmeiR377ZwpQsbtWHDx7yvBHvGmJK69cE1iuCspLKKdvpV"
+				"bzz-raw://3b85f48e9938d5e1cff2666bd7fda90713ab3812704de44ac9e4a43943193732",
+				"dweb:/ipfs/QmdeSKEenVMUvBba6fwbpW1UKkMsZR2MWFJPGYLgd1weNG"
 			]
 		}
 	},
