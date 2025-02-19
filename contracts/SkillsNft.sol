@@ -46,10 +46,6 @@ contract SkillsNFT is ERC721URIStorage, Ownable {
             abi.encodePacked("data:application/json;base64,", json)
         );
 
-        // Instead of embedding JSON on-chain, we directly set the token URI
-        // to a hosted HTTPS link for the metadata.
-        _setTokenURI(tokenId, imageUrl);
-
         // Set the token URI for the minted NFT.
         _setTokenURI(tokenId, finalTokenURI);
 
